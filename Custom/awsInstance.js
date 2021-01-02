@@ -100,7 +100,6 @@ class awsec2 {
             return reject(err);
           } else {
             const instances = _(res.StartingInstances).flatten().value();
-            console.log(instances);
             const StartingInstanceIDs = instances.map((instance) => {
               if (instance.PreviousState.Code == 16) return instance.InstanceId;
             });

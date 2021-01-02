@@ -9,7 +9,6 @@ const compute = new awsd(cred);
 router.get("/instanceId", (req, res) => {
   compute
   .InstanceIds().then((result) => {
-    console.log(result);
     res.send({
       type: "Success",
       result,

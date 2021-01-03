@@ -48,7 +48,7 @@ router.get("/stopInstance", (req, res) => {
 
 
 router.post("/SingleInstanceStop", (req, res) => {
-  const instanceid =req.body.Selectedid
+  let instanceid =req.body.Selectedid
   compute
     .stopInstances(instanceid)
     .then((result) => {
@@ -66,7 +66,7 @@ router.post("/SingleInstanceStop", (req, res) => {
 });
 
 router.post("/SingleInstanceStart", (req, res) => {
-  const instanceid =req.body.Selectedid
+  let instanceid =req.body.Selectedid
   compute
     .startInstances(instanceid)
     .then((result) => {

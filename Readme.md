@@ -19,6 +19,6 @@ Do not change the environment variable
     11  cd react-api-ui
     12  vim package.json => Replace the proxy url
         "proxy": "http://127.0.0.1:8080" => "proxy": "http://xxx.xxx.xxx.xxx:8080"
-    12  npm  start      # 3000 (Open the security port also)
+    13  npm  start      # 3000 (Open the security port also)
 
 

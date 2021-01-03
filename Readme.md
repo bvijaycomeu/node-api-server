@@ -12,10 +12,10 @@ Do not change the environment variable
     4  sudo apt-get install -y nodejs
     5  node --version
     6  history
-    7  git clone https://github.com/FourTimes/node-api-server.git
+    7  git clone https://github.com/bvijaycomeu/node-api-server
     8  cd node-api-server
     9   node index.js   # 8080 (Open the security port also)
-    10  git clone https://github.com/FourTimes/react-api-ui.git
+    10  git clone https://github.com/bvijaycomeu/react-api-ui
     11  cd react-api-ui
     12  vim package.json => Replace the proxy url
         "proxy": "http://127.0.0.1:8080" => "proxy": "http://xxx.xxx.xxx.xxx:8080"

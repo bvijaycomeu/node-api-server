@@ -1,18 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
-
 const cred = require('../Custom/credentials')
 const awsd = require('../Custom/awsInstance');
 const compute = new awsd(cred);
 
+
+
 router.get("/instanceId", (req, res) => {
   compute
   .InstanceIds().then((result) => {
-    res.send({
-      type: "Success",
-      result,
-    });
+    console.log(result);
+    res.send(result);
   });
 });
 

@@ -1,5 +1,9 @@
 const express = require("express");
 const app = express();
+const bodyparser = require('body-parser')
+app.use(bodyparser.urlencoded({extended: false}))
+app.use(bodyparser.json())
+
 
 let instanceEc2 = require('./routes/ec2Route');
 let Headers = require('./Middleware/Header')
@@ -8,6 +12,12 @@ let notFound = require('./Middleware/404')
 
 
 app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+
+app.post("/test", (req, res) => {
+  console.log(req.body)
   res.send("Hello World!");
 });
 

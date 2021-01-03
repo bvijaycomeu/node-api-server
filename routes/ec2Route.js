@@ -6,7 +6,7 @@ const compute = new awsd(cred);
 
 router.post("/instanceId", (req, res) => {
 console.log(req.body);
-  let idState = (req.body.State == "Start") ? 1 : 0;
+  let idState = (req.body.State == "Start") ? 0 : 1;
 
   compute
   .InstanceIds(idState).then((result) => {

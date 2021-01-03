@@ -4,9 +4,12 @@ const cred = require('../Custom/credentials')
 const awsd = require('../Custom/awsInstance');
 const compute = new awsd(cred);
 
-router.get("/instanceId", (req, res) => {
+router.post("/instanceId", (req, res) => {
+console.log(req.body);
+  let idState = (req.body.State == "Start") ? 1 : 0;
+
   compute
-  .InstanceIds().then((result) => {
+  .InstanceIds(idState).then((result) => {
     console.log(result);
     res.send(result);
   });

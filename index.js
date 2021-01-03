@@ -21,29 +21,23 @@ app.post("/test", (req, res) => {
   res.send("Hello World!");
 });
 
+
 /*
 Middleware Function
  */
-
 app.use(Logs)
 app.use('/*', Headers)
 
 /*
 Routes
  */
-
 app.use('/api/v1', instanceEc2)
 
 /*
 Disable Headers
  */
-
 app.disable('x-powered-by');
 app.disable('etag');
-
-
-
-
 
 
 /*

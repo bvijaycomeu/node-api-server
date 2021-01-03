@@ -4,8 +4,6 @@ const cred = require('../Custom/credentials')
 const awsd = require('../Custom/awsInstance');
 const compute = new awsd(cred);
 
-
-
 router.get("/instanceId", (req, res) => {
   compute
   .InstanceIds().then((result) => {
@@ -47,5 +45,47 @@ router.get("/stopInstance", (req, res) => {
       });
     });
 });
+
+
+router.post("/SingleInstanceStop", (req, res) => {
+  const instanceid =req.body.Selectedid
+  compute
+    .stopInstances(instanceid)
+    .then((result) => {
+      res.send({
+        type: "Success",
+        result,
+      });
+    })
+    .catch((error) => {
+      res.send({
+        type: "Failure",
+        error,
+      });
+    });
+});
+
+router.post("/SingleInstanceStart", (req, res) => {
+  const instanceid =req.body.Selectedid
+  compute
+    .startInstances(instanceid)
+    .then((result) => {
+      res.send({
+        type: "Success",
+        result,
+      });
+    })
+    .catch((error) => {
+      res.send({
+        type: "Failure",
+        error,
+      });
+    });
+});
+
+
+
+
+
 
 module.exports = router;
